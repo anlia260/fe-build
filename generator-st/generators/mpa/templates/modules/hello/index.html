@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="./hello.less"/>
+    <script src="../../resource/js/mod.js"></script>
+</head>
+<body>
+<p id="hello"></p>
+<script>
+    //同步
+    //    var hello = require('./hello');
+    //    document.getElementById('hello').innerHTML = hello('world');
+    //异步
+    require(['jquery', './hello'], function ($, hello) {
+        $.ajax({
+            url:'/api/hello',
+            success: function (res) {
+                res = res || {};
+                if(res.status == 'success'){
+                    var data = res.data || {};
+                    $('#hello').html(hello(data.msg));
+                }
+            }
+        })
+    })
+</script>
+</body>
+</html>

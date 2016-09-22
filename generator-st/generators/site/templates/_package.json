@@ -1,0 +1,17 @@
+{
+    "name": "<%=pkg.name%>",
+    "version": "1.0.0",
+    "description": "<%=pkg.desc%>",
+    "main": "fis-conf.js",
+    "devDependencies": {
+        "fis3": "^3.4.13",
+        "fis3-parser-mock-rewrite": "^1.0.0",<%if(pkg.includeLess){%>
+        "fis-parser-less-2.x": "^0.1.4",<%}%>
+        "fis3-postpackager-loader": "^1.5.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "<%=pkg.author%>",
+    "license": "MIT"
+}

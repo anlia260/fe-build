@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<link rel="import" href="../partials/header.html?__inline">
+<p id="hello"></p>
+<link rel="import" href="../partials/footer.html?__inline">
+<script>
+    $.ajax({
+        url: '/api/hello',
+        success: function (res) {
+            res = res || {};
+            if (res.status == 'success') {
+                var data = res.data || {};
+                $('#hello').html('hello ' + data.msg + '.');
+            }
+        }
+    })
+</script>
+</body>
+</html>

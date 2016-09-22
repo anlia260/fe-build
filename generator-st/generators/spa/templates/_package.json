@@ -1,0 +1,21 @@
+{
+    "name": "<%=pkg.name%>",
+    "version": "1.0.0",
+    "description": "<%=pkg.desc%>",
+    "main": "fis-conf.js",
+    "devDependencies": {
+        "fis3": "^3.4.13",
+        "fis3-hook-commonjs": "^0.1.20",
+        "fis3-parser-mock-rewrite": "^1.0.0",<%if(pkg.includeLess){%>
+        "fis-parser-less-2.x": "^0.1.4",<%}%><%if(pkg.includeBackbone){%>
+        "fis3-parser-tpl-precompile": "^1.0.1",<%}%><%if(pkg.includeTypeScript){%>
+        "fis3-parser-typescript": "^0.2.5",<%}%><%if(pkg.includeBabel){%>
+        "fis-parser-es6-babel": "^1.0.0",<%}%>
+        "fis3-postpackager-loader": "^1.5.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "<%=pkg.author%>",
+    "license": "MIT"
+}
